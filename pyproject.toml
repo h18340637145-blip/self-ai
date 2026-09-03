@@ -8,9 +8,12 @@ authors = [
 ]
 requires-python = ">=3.13"
 dependencies = [
+    "datasets>=5.0.1",
+    "huggingface-hub>=1.29.0",
     "jupyter>=1.1.1",
     "matplotlib>=3.11.1",
     "numpy>=2.5.2",
+    "scikit-learn>=1.9.0",
     "torch>=2.14.0",
     "torchaudio>=2.11.0",
     "torchvision>=0.29.0",
@@ -22,3 +25,7 @@ self-ai = "self_ai:main"
 [build-system]
 requires = ["uv_build>=0.12.7,<0.13.0"]
 build-backend = "uv_build"
+
+[project.optional-dependencies]
+torch = ["torch>=2.3", "torchvision>=0.18"]
+llm = ["anthropic>=0.39", "openai>=1.50"]
